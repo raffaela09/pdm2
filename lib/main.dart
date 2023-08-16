@@ -14,6 +14,8 @@ class MeuApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: Locale('pt', 'BR'),
+
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => Home(),

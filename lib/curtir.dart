@@ -17,7 +17,7 @@ class _CurtirState extends State<Curtir> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 235, 4, 4),
+        backgroundColor: Color.fromARGB(255, 157, 6, 6),
         title: Text("Curtir"),
       ),
       body: Center(
@@ -27,15 +27,14 @@ class _CurtirState extends State<Curtir> {
             Text(
               "Curtiu $n vezes",
               style: TextStyle(
-                color: Colors.red,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 25,
               ),
             ),
             IconButton(
-              iconSize: 50,
+              iconSize: 70,
               icon: curtiu == true
-                  ? Icon(Icons.favorite, color: Colors.red)
+                  ? Icon(Icons.favorite, color: const Color.fromARGB(255, 148, 13, 4))
                   : Icon(Icons.favorite_outline, color: Colors.black),
               onPressed: () {
                 setState(() {

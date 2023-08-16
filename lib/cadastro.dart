@@ -16,32 +16,69 @@ class _CadastroState extends State<Cadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 157, 6, 6),
           title: Text("Cadastro"),
         ),
         body: ListView(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.all(20),
           children: [
             TextFormField(
               cursorColor: Color.fromARGB(255, 35, 34, 34),
               decoration: InputDecoration(
-                  icon:
-                      Icon(Icons.email, color: Color.fromARGB(255, 74, 70, 70)),
-                  hintText: "Informe seu Email"),
+                prefixIcon: Icon(
+                  Icons.person,
+                  color: Color.fromARGB(255, 74, 70, 70),
+                ),
+                label: Text("Nome"),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             TextFormField(
               cursorColor: Color.fromARGB(255, 35, 34, 34),
               decoration: InputDecoration(
-                icon: Icon(
+                prefixIcon: Icon(Icons.calendar_month,
+                    color: Color.fromARGB(255, 74, 70, 70)),
+                label: Text("Informe sua data de nascimento"),
+                border: OutlineInputBorder(),
+              ),
+              onTap: () {
+                showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(1900, 1, 1), lastDate: DateTime.now());
+              },
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              cursorColor: Color.fromARGB(255, 35, 34, 34),
+              decoration: InputDecoration(
+                prefixIcon:
+                    Icon(Icons.email, color: Color.fromARGB(255, 74, 70, 70)),
+                label: Text("Informe seu E-mail"),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            
+            SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              cursorColor: Color.fromARGB(255, 35, 34, 34),
+              decoration: InputDecoration(
+                prefixIcon: Icon(
                   Icons.lock,
                   color: Color.fromARGB(255, 74, 70, 70),
                 ),
-                hintText: "Informe a sua Senha",
+                label: Text("Informe sua Senha"),
+                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(

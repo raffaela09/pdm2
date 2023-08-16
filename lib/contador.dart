@@ -16,8 +16,8 @@ class _ContadorState extends State<Contador> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 173, 102, 8),
-        title: Text("Meu Aplitcativo"),
+        backgroundColor: Color.fromARGB(255, 157, 6, 6),
+        title: Text("Contador"),
       ),
       body: Center(
         child: Column(
@@ -26,7 +26,7 @@ class _ContadorState extends State<Contador> {
             Text(x.toString()),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 97, 202, 65)),
+                  backgroundColor: Color.fromARGB(255, 103, 104, 103)),
               onPressed: () {
                 setState(() {
                   x = x + 1;
@@ -35,7 +35,7 @@ class _ContadorState extends State<Contador> {
               child: Text("Acrescentar"),
             ),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 99, 99, 99)),
               onPressed: () {
                 setState(() {
                   x = x - 1;
