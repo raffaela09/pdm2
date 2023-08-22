@@ -10,8 +10,9 @@ class Cadastro extends StatefulWidget {
 }
 
 class _CadastroState extends State<Cadastro> {
-  bool curtiu = false;
-  int nc = 0;
+  var nomeController = TextEditingController();
+  var emailController = TextEditingController();
+  var senhaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class _CadastroState extends State<Cadastro> {
           padding: EdgeInsets.all(20),
           children: [
             TextFormField(
+              controller: nomeController,
               cursorColor: Color.fromARGB(255, 35, 34, 34),
               decoration: InputDecoration(
                 prefixIcon: Icon(
@@ -47,13 +49,18 @@ class _CadastroState extends State<Cadastro> {
                 border: OutlineInputBorder(),
               ),
               onTap: () {
-                showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(1900, 1, 1), lastDate: DateTime.now());
+                showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900, 1, 1),
+                    lastDate: DateTime.now());
               },
             ),
             SizedBox(
               height: 10,
             ),
             TextFormField(
+              controller: emailController,
               cursorColor: Color.fromARGB(255, 35, 34, 34),
               decoration: InputDecoration(
                 prefixIcon:
@@ -62,11 +69,11 @@ class _CadastroState extends State<Cadastro> {
                 border: OutlineInputBorder(),
               ),
             ),
-            
             SizedBox(
               height: 10,
             ),
             TextFormField(
+              controller: senhaController,
               cursorColor: Color.fromARGB(255, 35, 34, 34),
               decoration: InputDecoration(
                 prefixIcon: Icon(
@@ -83,7 +90,12 @@ class _CadastroState extends State<Cadastro> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 146, 142, 142)),
-              onPressed: () {},
+              onPressed: () {
+                print("O botao foi clicado");
+                print(nomeController.text);
+                print(emailController.text);
+                print(senhaController.text);
+              },
               child: Text("Salvar"),
             )
           ],
