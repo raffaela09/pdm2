@@ -3,6 +3,7 @@ import 'contador.dart';
 import 'cadastro.dart';
 import 'curtir.dart';
 import 'package:flutter/material.dart';
+import 'login.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class MeuApp extends StatelessWidget {
         '/contador': (context) => Contador(),
         '/curtir': (context) => Curtir(),
         '/cadastro': (context) => Cadastro(),
+        '/login': (context) => Login(),
       },
     );
   }
@@ -77,6 +79,19 @@ class Home extends StatelessWidget {
             trailing: Icon(Icons.chevron_right),
             onTap: () {
               Navigator.pushNamed(context, "/cadastro");
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.person,
+              size: 46,
+              color: Color.fromARGB(255, 14, 14, 14),
+            ),
+            title: Text("Login"),
+            subtitle: Text("Exemplo de cadastrar"),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.pushNamed(context, "/login");
             },
           ),
         ],
