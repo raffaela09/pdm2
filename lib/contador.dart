@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Contador extends StatefulWidget {
   const Contador({super.key});
@@ -10,7 +11,7 @@ class Contador extends StatefulWidget {
 }
 
 class _ContadorState extends State<Contador> {
-  int x = 100;
+  int x = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,8 @@ class _ContadorState extends State<Contador> {
               child: Text("Acrescentar"),
             ),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 99, 99, 99)),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 99, 99, 99)),
               onPressed: () {
                 setState(() {
                   x = x - 1;
